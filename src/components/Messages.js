@@ -26,7 +26,7 @@ const Message = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "http://localhost:5000/api/messages/users/list",
+          "https://general-be1-eeea8a48c7e4.herokuapp.com/api/messages/users/list",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -41,7 +41,7 @@ const Message = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "http://localhost:5000/api/messages/list/new-users",
+          "https://general-be1-eeea8a48c7e4.herokuapp.com/api/messages/list/new-users",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -63,7 +63,7 @@ const Message = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        `http://localhost:5000/api/messages/${user._id}`,
+        `https://general-be1-eeea8a48c7e4.herokuapp.com/api/messages/${user._id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -83,7 +83,7 @@ const Message = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:5000/api/messages",
+        "https://general-be1-eeea8a48c7e4.herokuapp.com/api/messages",
         {
           toUserId: selectedUser._id,
           text: messageInput,

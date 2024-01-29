@@ -1,6 +1,6 @@
 // src/api.js
 
-const API_BASE_URL = 'http://localhost:5000'; // Replace with your server's URL
+const API_BASE_URL = 'https://general-be1-eeea8a48c7e4.herokuapp.com'; // Replace with your server's URL
 
 export const registerUser = async (email, username, password, phoneNumber) => {
     try {
@@ -19,7 +19,7 @@ export const registerUser = async (email, username, password, phoneNumber) => {
 
 export const loginUser = async (email, password) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/login`, {
+        const response = await fetch(`https://general-be1-eeea8a48c7e4.herokuapp.com/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ export const postService = async (title, description, price, token) => {
 
 export const orderService = async (serviceId, token) => {
     try {
-      const response = await fetch(`http://localhost:5000/order-service`, {
+      const response = await fetch(`https://general-be1-eeea8a48c7e4.herokuapp.com/order-service`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ export const orderService = async (serviceId, token) => {
   
   export const rateService = async (orderId, rating, token) => {
     try {
-      const response = await fetch(`http://localhost:5000/rate-service`, {
+      const response = await fetch(`https://general-be1-eeea8a48c7e4.herokuapp.com/rate-service`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ export const orderService = async (serviceId, token) => {
 
 export const fetchServices = async () => {
     try {
-      const response = await fetch('http://localhost:5000/services'); // Adjust URL as per your backend route
+      const response = await fetch('https://general-be1-eeea8a48c7e4.herokuapp.com/services'); // Adjust URL as per your backend route
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

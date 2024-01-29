@@ -62,7 +62,7 @@ const CheckoutModal = ({ open, onClose, serviceDetails }) => {
     // Make API call to send a message (replace with your actual messaging API endpoint)
     try {
       const token = localStorage.getItem('token'); // Assuming you have a token for authentication
-      const response = await fetch(`http://localhost:5000/api/messages`, {
+      const response = await fetch(`https://general-be1-eeea8a48c7e4.herokuapp.com/api/messages`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ const CheckoutModal = ({ open, onClose, serviceDetails }) => {
     try {
       // Make API call to create a new order
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:5000/api/orders', { serviceId: serviceDetails.serviceId }, {
+      const response = await axios.post('https://general-be1-eeea8a48c7e4.herokuapp.com/api/orders', { serviceId: serviceDetails.serviceId }, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,

@@ -20,7 +20,7 @@ const ViewOrdersPage = () => {
       try {
         const token = localStorage.getItem("token"); // Assuming you have a token for authentication
 
-        const response = await axios.get("http://localhost:5000/api/orders", {
+        const response = await axios.get("https://general-be1-eeea8a48c7e4.herokuapp.com/api/orders", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrders(response.data);
@@ -36,7 +36,7 @@ const ViewOrdersPage = () => {
     try {
       const token = localStorage.getItem("token"); // Assuming you have a token for authentication
       await axios.post(
-        `http://localhost:5000/api/orders/${orderId}/complete`,
+        `https://general-be1-eeea8a48c7e4.herokuapp.com/api/orders/${orderId}/complete`,
         null,
         {
           headers: {
