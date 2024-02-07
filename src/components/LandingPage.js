@@ -285,7 +285,7 @@ const LandingPage = () => {
         }}
       >
         <Typography variant="body2" color="text.secondary" align="center">
-          © 2022 Your Company. All rights reserved.
+          © 2024 Your Company. All rights reserved.
         </Typography>
         <Divider style={{ marginTop: "10px", marginBottom: "10px" }} />
         <Typography variant="body2" color="text.secondary" align="center">
