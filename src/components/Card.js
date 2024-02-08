@@ -7,13 +7,9 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
+
 import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+
 import { Button, Chip } from "@mui/material";
 import { Link } from "react-router-dom";
 import CheckoutModal from "./CheckoutPage";
@@ -22,6 +18,7 @@ import { MessageOutlined } from "@mui/icons-material";
 const ServiceCard = ({
   title,
   serviceId,
+  image,
   description,
   price,
   _id,
@@ -32,6 +29,7 @@ const ServiceCard = ({
   const serviceInfo = {
     title,
     serviceId,
+    image,
     username,
     description,
     price,
@@ -47,12 +45,7 @@ const ServiceCard = ({
   return (
     <>
       <Card sx={{ maxWidth: 345 }}>
-        <CardMedia
-          component="img"
-          height="194"
-          image="https://www.codio.com/hubfs/Blog_EN_PICS/Pair%20Programming%20-%20Blog%20Cover%20Image.gif"
-          alt="Service Image"
-        />
+        <CardMedia component="img" height={200} image={image} alt="Service Image" />
         <CardContent>
           <h3 variant="body2" color="text.secondary">
             {title}
@@ -79,10 +72,9 @@ const ServiceCard = ({
           />
         </CardContent>
         <CardActions>
-          <Button  variant="contained" color="secondary">
+          <Button variant="contained" color="secondary">
             <Link to={`/messages/`}>
-              <MessageOutlined style={{ marginRight: "5px" ,color:'white'}} />
-          
+              <MessageOutlined style={{ marginRight: "5px", color: "white" }} />
             </Link>
           </Button>
 

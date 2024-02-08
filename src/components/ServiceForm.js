@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import { TextField, Button, Container, Typography, Box } from '@mui/material';
 import { postService } from "../api";
+import UploadImage from "./UploadImage";
 const ServiceForm = ({ onPostService }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
 
+  const [img, setImage] = useState("");
+
+  const onImageUpload = (img)=>{
+    setImage(img)
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token"); 
     console.log("called");// Retrieve the stored token
-    const response = await postService(title, description, price, token);
+    const response = await postService(img, title, description, price, token);
     onPostService();
     console.log(response); // Handle the response appropriately
     window.location.reload()
@@ -22,6 +29,10 @@ const ServiceForm = ({ onPostService }) => {
         <Typography variant="h4" gutterBottom>
           Post a Service
         </Typography>
+ 
+ <UploadImage onImageUpload={onImageUpload} />
+
+
         <form onSubmit={handleSubmit}>
           <TextField
             label="Title"

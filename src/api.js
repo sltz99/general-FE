@@ -32,7 +32,7 @@ export const loginUser = async (email, password) => {
     }
 };
 
-export const postService = async (title, description, price, token) => {
+export const postService = async (image,title, description, price, token) => {
     try {
         const response = await fetch(`${API_BASE_URL}/service`, {
             method: 'POST',
@@ -40,7 +40,7 @@ export const postService = async (title, description, price, token) => {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify({ title, description, price })
+            body: JSON.stringify({ image,title, description, price })
         });
         return response;
     } catch (error) {

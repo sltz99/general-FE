@@ -53,6 +53,7 @@ const ServiceList = () => {
                 title={service.title}
                 description={service.description}
                 price={service.price}
+                image={service.image}
                 _id={service.user._id}
                 username={service.user.username} // Assuming the user object is nested within service
                 createdAt={service.createdAt}
